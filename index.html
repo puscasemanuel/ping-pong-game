@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <img src="https://images.unsplash.com/photo-1584813539806-2538b8d918c6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+            alt="Ping Pong" height="250px" width="100%">
+        <h6>Ping Pong Score Keeper</h6>
+        <h2><span id="player_one-score">0</span> to <span id="player_two-score">0</span>
+        </h2>
+
+        <p>Use the buttons below to keep the score *(Chose the score you want to play to first)</p>
+        <h4>Playing to</h4>
+        <select class="browser-default choose_final-score">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+
+        <div class="buttons__container">
+            <button disabled class="waves-effect blue darken-3 btn-small" id="plus_player-one">+1 player one</button>
+            <button disabled class="waves-effect deep-purple accent-3 btn-small" id="plus_player-two">+1 player
+                two</button>
+            <button disabled class="waves-effect waves-light btn-small" id="reset">reset</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
