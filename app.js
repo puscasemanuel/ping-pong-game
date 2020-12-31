@@ -17,7 +17,7 @@ let score1 = 0;
 let score2 = 0;
 
 select_dropdown.addEventListener('change', (e) => {
-  maxScore = e.target.value;
+  maxScore = parseInt(e.target.value);
   player1_button.disabled = false;
   player2_button.disabled = false;
   reset_button.disabled = false;
@@ -29,7 +29,7 @@ player1_button.addEventListener('click', () => {
   player1_score.innerHTML = score1;
 
   //Check
-  if (score1 == maxScore) {
+  if (score1 === maxScore) {
     player1_score.classList.add('green-text', 'text-darken-3');
     player1_button.disabled = true;
     player2_button.disabled = true;
@@ -42,7 +42,7 @@ player2_button.addEventListener('click', () => {
   player2_score.innerHTML = score2;
 
   //Check
-  if (score2 == maxScore) {
+  if (score2 === maxScore) {
     player2_score.classList.add('green-text', 'text-darken-3');
     player1_button.disabled = true;
     player2_button.disabled = true;
