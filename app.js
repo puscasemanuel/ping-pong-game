@@ -23,31 +23,32 @@ select_dropdown.addEventListener('change', (e) => {
   reset_button.disabled = false;
 });
 
+//Check winner
+const checkWinner = (playerScore, playerNumber, player2Element) => {
+  if (playerScore === maxScore) {
+    let elName;
+    const checkNumber =
+      playerNumber == 1 ? (elName = player1_score) : (elName = player2_score);
+    elName.classList.add('green-text', 'text-darken-3');
+    player2Element.classList.add('red-text', 'text-darken-3');
+    player1_button.disabled = true;
+    player2_button.disabled = true;
+  }
+};
+
 //Player one score
 player1_button.addEventListener('click', () => {
   score1++;
   player1_score.innerHTML = score1;
 
-  //Check
-  if (score1 === maxScore) {
-    player1_score.classList.add('green-text', 'text-darken-3');
-    player1_button.disabled = true;
-    player2_button.disabled = true;
-    player2_score.classList.add('red-text', 'text-darken-3');
-  }
+  checkWinner(score1, 1, player2_score);
 });
 
 player2_button.addEventListener('click', () => {
   score2++;
   player2_score.innerHTML = score2;
 
-  //Check
-  if (score2 === maxScore) {
-    player2_score.classList.add('green-text', 'text-darken-3');
-    player1_button.disabled = true;
-    player2_button.disabled = true;
-    player1_score.classList.add('red-text', 'text-darken-3');
-  }
+  checkWinner(score2, 2, player1_score);
 });
 
 reset_button.addEventListener('click', resetAll);
