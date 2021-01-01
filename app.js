@@ -33,6 +33,7 @@ const checkWinner = (playerScore, playerNumber, player2Element) => {
     player2Element.classList.add('red-text', 'text-darken-3');
     player1_button.disabled = true;
     player2_button.disabled = true;
+    select_dropdown.disabled = true;
   }
 };
 
@@ -59,7 +60,7 @@ function resetAll() {
   score2 = 0;
   player1_score.innerHTML = score1;
   player2_score.innerHTML = score2;
-  select_dropdown.value = '';
+  select_dropdown.disabled = false;
   player1_button.disabled = true;
   player2_button.disabled = true;
   reset_button.disabled = true;
